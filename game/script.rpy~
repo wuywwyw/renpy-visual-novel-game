@@ -1,0 +1,101 @@
+﻿# The script of the game goes in this file.
+
+# Declare characters used by this game. The color argument colorizes the
+# name of the character.
+
+define a = Character('Arya', color="#c8ffc8")
+define d = Character('Daenerys', color="#c8c8ff")
+
+
+# The game starts here.
+
+label start:
+
+    # Add background music
+    
+    play music "/audio/Stonekeepers ft. Christine Smit - New Dawn Is Rising.mp3"
+    
+    # Add background image of glade, with fade animation 
+    scene glade
+    with fade
+
+    # Show a character (Arya), show narration
+    show a
+    a "Hi I'm Arya. I'm looking for my needle."
+
+    # Show a on the left, and show d on the right, 
+    # both with dissolve animation
+    show a at left
+    show d at right
+    with dissolve
+    
+    # Display lines of dialogue.
+    
+    d "Do you know who am I?"
+    
+    a "..."
+    
+    d "I'm Daenerys of the House Targaryen, the First of Her Name, 
+    The Unburnt, Queen of the Andals, the Rhoynar and the First Men, 
+    Queen of Meereen, Khaleesi of the Great Grass Sea, 
+    Protector of the Realm, Lady Regent of the Seven Kingdoms, 
+    Breaker of Chains and Mother of Dragons."
+    
+    d "Wanna walk with me? I may give you some clue."
+
+    a "..."
+    
+    a "Sure."
+
+    scene castle
+    with fade
+
+    "After a short while, they reach the castle just at the end of the glade."
+
+    "It's a scenic view Arya grown used to. Winter is especially beautiful here."
+
+    show d at right
+
+    "Daenerys suddenly turns to Arya and smiles. She looks so welcoming that Arya feel a little nervous."
+
+    d "Before I tell you where it is, you will be my artist for a visual novel."
+
+    show a at left
+    
+    "Silence."
+    
+    
+label leaving:
+
+
+    a "..."
+
+    a "What's a \"visual novel?\""
+
+menu:
+
+    "It's a videogame.":
+        jump game
+
+    "It's an interactive book.":
+        jump book
+
+label game:
+
+    d "It's a kind of videogame you can play on your computer or a console."
+
+    jump marry
+
+label book:
+
+    d "It's like an interactive book that you can read on a computer or a console."
+
+    jump marry
+
+label marry:
+
+    "And so, we will build a visual novel empire."
+    
+    # This ends the game.
+
+    return
